@@ -66,6 +66,12 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    make_ext4fs \
+    e2fsck \
+    setup_fs
+
 # KSM
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ksm.default=1
