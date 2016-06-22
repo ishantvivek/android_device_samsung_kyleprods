@@ -28,11 +28,9 @@ BOARD_KERNEL_PAGESIZE                       := 4096
 BOARD_KERNEL_OFFSET                         := 0x00008000
 BOARD_RAMDISK_OFFSET                        := 0x01000000
 BOARD_KERNEL_TAGS_OFFSET                    := 0x00000100
+BOARD_KERNEL_CMDLINE                        := androidboot.hardware=hawaii_ss_kyleprods
 
-#Kernel cmdline
-#BOARD_KERNEL_CMDLINE += androidboot.hardware=hawaii_ss_kyleprods
-
-#Prebuilt
+# Use prebuilt kernel
 TARGET_PREBUILT_KERNEL                      := true
 
 #TARGET_KERNEL_SOURCE                        := kernel/samsung/kyleproxx
