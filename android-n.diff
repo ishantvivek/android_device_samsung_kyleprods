@@ -1,9 +1,11 @@
---- a/external/icu/icu4c/source/common/ucnv.c
-+++ b/external/icu/icu4c/source/common/ucnv.c
-@@ -2904,6 +2904,75 @@
+diff -ur a/external/icu/icu4c/source/common/ucnv.c b/external/icu/icu4c/source/common/ucnv.c
+--- a/external/icu/icu4c/source/common/ucnv.c	2016-05-08 03:43:11.920995999 +0000
++++ b/external/icu/icu4c/source/common/ucnv.c	2016-05-08 03:34:25.212995999 +0000
+@@ -2904,6 +2904,76 @@
              return FALSE;
      }
  }
++
 +U_CAPI void    U_EXPORT2 ucnv_setToUCallBack_48 (UConverter * converter,
 +                            UConverterToUCallback newAction,
 +                            const void* newContext,
@@ -76,32 +78,14 @@
  #endif
  
  /*
---- a/system/core/init/init.cpp
-+++ b/system/core/init/init.cpp
-@@ -343,7 +343,7 @@
-         { "ro.boot.mode",       "ro.bootmode",   "unknown", },
-         { "ro.boot.baseband",   "ro.baseband",   "unknown", },
-         { "ro.boot.bootloader", "ro.bootloader", "unknown", },
--        { "ro.boot.hardware",   "ro.hardware",   "unknown", },
-+        { "ro.boot.hardware",   "ro.hardware",   "hawaii_ss_kyleprods", },
-         { "ro.boot.revision",   "ro.revision",   "0", },
-     };
-     for (size_t i = 0; i < ARRAY_SIZE(prop_map); i++) {
-@@ -650,4 +650,4 @@
-     }
- 
-     return 0;
--}
-+}
-\ No newline at end of file
 --- a/system/sepolicy/domain.te
 +++ b/system/sepolicy/domain.te
 @@ -187,7 +187,7 @@
- # init starts in kernel domain and switches to init domain via setcon in
- # the init.rc, so the setenforce occurs while still in kernel. After
- # switching domains, there is never any need to setenforce again by init.
+ # init starts in kernel domain and switches to init domain via setcon in
+ # the init.rc, so the setenforce occurs while still in kernel. After
+ # switching domains, there is never any need to setenforce again by init.
 -neverallow * kernel:security setenforce;
 +#neverallow * kernel:security setenforce;
- neverallow { domain -kernel } kernel:security setcheckreqprot;
- 
- # No booleans in AOSP policy, so no need to ever set them.
+ neverallow { domain -kernel } kernel:security setcheckreqprot;
+
+ # No booleans in AOSP policy, so no need to ever set them.
