@@ -89,8 +89,6 @@ TARGET_SCREEN_WIDTH                         := 480
 
 
 # Hardware rendering
-USE_OPENGL_RENDERER                         := true
-BOARD_USE_MHEAP_SCREENSHOT                  := true
 BOARD_EGL_WORKAROUND_BUG_10194508           := true
 TARGET_USES_ION                             := true
 COMMON_GLOBAL_CFLAGS                        += -DNEEDS_VECTORIMPL_SYMBOLS -DHAWAII_HWC -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
@@ -177,9 +175,6 @@ COMMON_GLOBAL_CFLAGS                        += -DCOMPAT_SENSORS_M
 
 # Some of our vendor libs have text relocation
 TARGET_NEEDS_TEXT_RELOCATIONS               := true
-
-# dt2w
-# TARGET_TAP_TO_WAKE_NODE                     := "/sys/android_touch/doubletap2wake"
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
