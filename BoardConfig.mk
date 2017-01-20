@@ -99,6 +99,9 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS       := true
 # External apps on SD
 TARGET_EXTERNAL_APPS                        := sdcard1
 
+# Gello
+THEY_FIXED_GELLO                            := true
+
 # OpenGL
 BOARD_USES_HWCOMPOSER                       := true
 BOARD_USE_BGRA_8888                         := true
