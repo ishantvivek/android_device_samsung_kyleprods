@@ -548,31 +548,7 @@ diff -ur a/frameworks/av/services/audioflinger/Threads.cpp b/frameworks/av/servi
 +#endif
          // Use this to track timestamp information
          // ALOGD("%s", mTimestamp.toString().c_str());
- 
-diff -ur a/frameworks/base/services/core/java/com/android/server/am/ProcessList.java b/frameworks/base/services/core/java/com/android/server/am/ProcessList.java
---- a/frameworks/base/services/core/java/com/android/server/am/ProcessList.java	2017-01-02 17:09:38.288000000 +0000
-+++ b/frameworks/base/services/core/java/com/android/server/am/ProcessList.java	2017-01-02 18:08:47.584000000 +0000
-@@ -215,8 +215,8 @@
-     // These are the low-end OOM level limits.  This is appropriate for an
-     // HVGA or smaller phone with less than 512MB.  Values are in KB.
-     private final int[] mOomMinFreeLow = new int[] {
--            12288, 18432, 24576,
--            36864, 43008, 49152
-+            17920, 20480, 25600,
-+            38400, 43008, 49152
-     };
-     // These are the high-end OOM level limits.  This is appropriate for a
-     // 1280x800 or larger screen with around 1GB RAM.  Values are in KB.
-@@ -290,7 +290,7 @@
-                 if (i == 4) high = (high*3)/2;
-                 else if (i == 5) high = (high*7)/4;
-             }
--            mOomMinFree[i] = (int)(low + ((high-low)*scale));
-+            mOomMinFree[i] = (int)(low);
-         }
- 
-         if (minfree_abs >= 0) {
-Only in b/frameworks/base/services/core/java/com/android/server/am: ProcessList.java.orig
+
 diff -ur a/frameworks/base/services/core/java/com/android/server/power/PowerManagerService.java b/frameworks/base/services/core/java/com/android/server/power/PowerManagerService.java
 --- a/frameworks/base/services/core/java/com/android/server/power/PowerManagerService.java	2017-01-02 17:09:38.364000000 +0000
 +++ b/frameworks/base/services/core/java/com/android/server/power/PowerManagerService.java	2017-01-02 18:08:47.544000000 +0000
