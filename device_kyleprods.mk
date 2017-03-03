@@ -71,6 +71,10 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
+# Snap Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Gello Browser
 PRODUCT_PACKAGES += \
     Gello
