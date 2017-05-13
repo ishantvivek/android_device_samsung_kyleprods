@@ -1,4 +1,4 @@
-# CM-12.1 Device tree for Samsung GT-S7582 (kyleprods)
+# LineageOS 12.1 Device tree for Samsung GT-S7582 (kyleprods)
 
 ### Specs (Physically inspected):
   - CPU: Cortex-A9 (Little endian, Dual Core)
@@ -19,7 +19,7 @@
   - WIFI/Bluetooth/FM-Radio: BCM4330
 
 ### Notice:
-  - Apply patch *PATCH_CM-12.1.diff* to root directory of CM-12.1 source code before build
+  - Apply patch *PATCH_CM-12.1.diff* to root directory of LOS 12.1 source code before build
 
 ### Other resource:
   - Kernel source: https://github.com/SandPox/android_kernel_samsung_kyleproxx
